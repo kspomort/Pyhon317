@@ -1646,5 +1646,165 @@
 #
 # git init - создание нового репозитория
 
-print("Данные для добавления на GitHub")
-print("Другой компьютер")
+# print("Данные для добавления на GitHub")
+# print("Другой компьютер")
+
+
+# s = ["ab_1", "ac_2", "bc_1", "bc_2"]
+# # a = [x for x in s if "a" not in x]
+# a = ["A" if x[0] == "a" else "B" for x in s]
+# # b = ["A" + x[1:] if x[0] == "a" else "B" + x[1:] for x in s]
+# b = ["A" + x[1:] if x[0] == "a" else "B" + x[1:] for x in s if x[1] == "c"]
+# print(a)
+# print(b)
+#
+# lst =[]
+# for x in s:
+#     if x[1] == "c":
+#         if x[0] == "a":
+#             lst.append("A" + x[1:])
+#         else:
+#             lst.append("B" + x[1:])
+# print(lst)
+
+
+# a = {0, 1, 2, 3}
+# b = {4, 3, 2, 1}
+# # c = a | b # объединение 2 сетов(только уникальные значение)
+# # c = a.union(b)
+# # a |= b
+# # c = a & b # возвращает только пересекающиеся переменных
+# # c = b - a # возвращает только уникальные значения для левой переменной
+# # c = a ^ b # возвращает только НЕ пересекающиеся элементы из переменных
+# print(c)
+# # a += b => a = a + b
+
+# s1, s2, s3, s4, s5, s6, s7 = {1, 2}, {3}, {4, 5}, {3, 2, 6}, {6}, {7, 8}, {9, 8}
+# # s = s1.union(s2, s3, s4, s5, s6, s7)
+# s = s1 | s2 | s3 | s4 | s5 | s6 | s7
+# print(s)
+# print(len(s))
+# print(min(s))
+# print(max(s))
+
+
+# s1 = "Hello"
+# s2 = "How are you"
+# s = set(s1) & set(s2)
+# print(s)
+# for i in s:
+#     print(i, end=" ")
+
+# s1 = "Python"
+# s2 = "Programming language"
+# s = set(s1) - set(s2)
+# print(s)
+# for i in s:
+#     print(i, end=" ")
+
+
+# drawing, music = {"Марина", "Женя", "Света"}, {"Костя", "Женя", "Илья"}
+# one_hobby = drawing ^ music
+# both_hobby = drawing & music
+# drawing = drawing - both_hobby
+# print("Only one hobby:", one_hobby)
+# print("Both hobby:", both_hobby)
+# print("Drawing new:", drawing)
+
+
+# a = {0, 1, 2, 3, 4}
+# b = {3, 2, 1}
+# print(a >= b)  # b содержится в а
+
+
+# # frozenset
+# # s = frozenset([1, 2, 3, 4, 5, 6])
+# s = frozenset("Hello")
+# print(s)
+
+
+# # Словари(dict)
+# s = [1, 2, 3]
+# d = {"one": 1, "two": 2, "three": 3}  # словарь: ключи + значения(записывается после:
+# print(s[1])
+# print(d["two"])
+#
+# s1 = ["one", "two", "three"]
+# d1 = {1: "one", 2: "two", 3: "three"}  # значения - любые. ключи ограничены: нельзя список, сет. Ключи уникальны
+# print(s1[1])
+# print(d1[2])
+
+
+# d = {0: "test", "one": 45, (1, 2, 3): "Кортеж", True: 1,  35: [2, 3, 6, 7], False: "один"}
+# print(d[True])
+# print(d[(1, 2, 3)])
+# print(d)
+# d[(1, 2, 3)] = 100
+# print(d)
+
+# d = {'one': 1, 'two': 2}
+# print(d)
+# print(type(d))
+#
+# d1 = dict(one=1, two=2)
+# print(d1)
+# print(type(d1))
+
+
+# # d1 = dict([("one", 1), ("two", 2)])
+# # d1 = dict([["one", 1], ["two", 2]])
+# # d1 = dict([("one", 1, 6), ("two", 2)])
+# d1 = dict(["on", ("two", 2)])
+# print(d1)
+
+
+# d = {x ** 2: x for x in range(7)}
+# print(d)
+
+
+# d = {"one": 1, "two": 2, "three": 3}
+# print("two" in d)
+# print(2 in d)
+# print(len(d))
+# print(d.values())
+# for key in d:
+#     print(key, "->", d[key])
+
+
+# d = {"one": 1, "two": 2, "three": 3}
+# print(d)
+# print("four" in d)
+# key = "four"
+# # if key in d:
+# #     print(d[key])
+# # try:
+# #     print(d[key])
+# # except KeyError:
+# #     print("Такого ключа не существует")
+# del d[key]
+# print(d)
+
+
+# d = {"x1": 3, "x2": 7, "x3": 5, "x4": -1}
+# res = 1
+# for i in d:
+#     res *= d[i]
+# print(res)
+
+
+# # d = dict()
+# # # d[1] = input("-> ")
+# # # d[2] = input("-> ")
+# # # d[3] = input("-> ")
+# # # d[4] = input("-> ")
+# d = {x: input("-> ") for x in range(1, 5)}
+# print(d)
+# try:
+#     dislike = int(input("Какой элемент исключить: "))
+#     del d[dislike]
+# except (KeyError, ValueError):
+#     print("Такого ключа не существует")
+#     dislike = int(input("Какой элемент исключить: "))
+# print(d)
+
+
