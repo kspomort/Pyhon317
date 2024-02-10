@@ -1808,3 +1808,195 @@
 # print(d)
 
 
+# d = {"x1": 3, "x2": 7, "x3": 5, "x4": -1}
+# print(len(d))
+
+
+# goods = {
+#     "1": ['Core-i3-4330', 9, 4500],
+#     "2": ['Core-i5-4670k', 3, 8500],
+#     "3": ['AMD FX-6300', 6, 3700],
+#     "4": ['Pentium G3220', 8, 2100],
+#     "5": ['Core-i5-3450', 5, 6400],
+# }
+#
+# for key in goods:
+#     print(key, ") ", goods[key][0], " - ", goods[key][1], " шт. ", "по ", goods[key][2], " руб.", sep="")
+#
+# while True:
+#     n = input("Введите номер товара: ")
+#     if n != "0":
+#         if n in goods:
+#             while True:
+#                 try:
+#                     count = int(input("Кол-во: "))
+#                     goods[n][1] += count
+#                     break
+#                 except ValueError:
+#                     print("Ошибка! Введите целое число!")
+#         else:
+#             print("Такого ключа не существует")
+#     else:
+#         break
+#
+# for key in goods:
+#     print(key, ") ", goods[key][0], " - ", goods[key][1], " шт. ", "по ", goods[key][2], " руб.", sep="")
+
+
+# d = {"x1": 3, "x2": 7, "x3": 5}
+# print(d)
+# # del d['x1']
+# # d['x4'] = 10
+# # print(d)
+# # a = {'one': 1}
+#
+# print(d.values())
+# print(d.keys())
+# print(d.items())
+# # for key, value in d.items():
+# #     print(key, '->', value)
+# print(list(d))  # список ключей
+# print(list(d.values()))  # [3, 7, 5]
+# print(list(d.items()))  # [('x1', 3), ('x2', 7), ('x3', 5)]
+# print(tuple(d.items()))  # (('x1', 3), ('x2', 7), ('x3', 5))
+
+
+# d = {"x1": 3, "x2": 7, "x3": 5}
+# d2 = d.copy()
+# print("d =", d)
+# print("d2 =", d2)
+#
+# d2['x4'] = 10
+# d['x1'] = 100
+#
+# print("d =", d)
+# print("d2 =", d2)
+
+
+# d = {"x1": 3, "x2": 7, "x3": 5}
+# print(d)
+# # print(d["x1"])
+# # value = d.get("x4", "Такого ключа не существует")  # Получает значение ключа. Выдает предупреждение, если ключа не
+# # # существует
+# # print(value)
+# # item = d.pop("x1", 0)
+# # print(item)
+# # print(d)
+# item2 = d.popitem()  # Удаляет последний элемент из словаря
+# print(item2)
+# print(d)
+#
+# d.clear()
+# print(d)
+# # s = [1, 2, 3]
+# # i = s.pop(0)
+# # print(i)
+# # print(s)
+
+
+# d = {"x1": 3, "x2": 7, "x3": 5}
+# print(d)
+# # item = d.setdefault("x4", 10)  # Если ключ существует не меняется. Если ключа нет-добавляет егов  словарь со
+# # # значением из 2ого параметра
+# # print(item)
+# a = {"one": 1, "two": 2, "x1": 10}
+# a = list(a.items())
+# print(a)
+# d.update(a)
+# print(d)
+
+
+# x = {'a': 1, 'b': 2}
+# y = {'b': 3, 'c': 4}
+# # z = x.copy()
+# # z.update(y)
+# z = x | y
+# print(z)
+
+
+# d = dict.fromkeys(['a', 'b', 'c'], 100)
+# print(d)
+
+# d = {'name': "Kelly", 'age': 25, 'salary': 8000, 'city': 'New York'}
+# d2 = dict()
+# d2['name'] = d.pop('name')
+# d2['salary'] = d.pop('salary')
+# print(d)
+# print(d2)
+
+# d = {'name': "Kelly", 'age': 25, 'salary': 8000, 'city': 'New York'}
+# print(d)
+# d['location'] = d.pop('city')
+# print(d)
+
+
+# d = {
+#     'first': {
+#         1: 'one',
+#         2: 'two',
+#         3: 'three',
+#     },
+#     'second': {
+#         2: 'four',
+#         4: 'five',
+#     }
+# }
+# print(d)
+#
+# for x in d:
+#     print(x)
+#     for y in d[x]:
+#         print("\t", y, ":", d[x][y])
+
+
+# d = {
+#     'first': {
+#         1: {
+#             11: "abc",
+#             12: "abc",
+#             113: "abc",
+#         },
+#         2: {
+#             11: "abc"
+#         },
+#         3: {
+#             11: "abc"
+#         }
+#     },
+#     'second': {
+#         4: {
+#             11: "abc"
+#         },
+#         5:  {
+#             11: "abc"
+#         }
+#     }
+# }
+# print(d)
+#
+# for x in d:
+#     print(x)
+#     for y in d[x]:
+#         print("\t", y)
+#         for z in d[x][y]:
+#             print("\t\t", z, ":", d[x][y][z])
+
+
+# d = {'один': 1, 'два': 2, 'три': 3, 'четыре': 4}
+# d2 = {key: value for key, value in d.items() if value <= 2}
+# print(d2)
+
+
+# a = ["one", 1, 2, 3, "two", 10, 20, "three", 15, 36, 60, "four", -20]
+#
+# d = dict()
+# s = None
+#
+# for i in a:
+#     if type(i) == str:
+#         d[i] = []
+#         s = i  # s = 'one'
+#         print(d)
+#     else:
+#         d[s].append(i)
+# print(d)
