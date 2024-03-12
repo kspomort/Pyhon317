@@ -3584,6 +3584,8 @@ import re
 # Модуль OS, OS.PATH
 
 import os
+import time
+
 
 # import os.path
 
@@ -3656,3 +3658,189 @@ import os
 # Work\F1\f13.txt
 # Work\F2\F21\f211.txt
 # Work\F2\F21\f212.txt
+
+
+# import os
+#
+# root = "C:\\Python317\\317\\Work"
+# objs = os.listdir(root)
+# # print(objs)
+# objs = list(map(lambda i: os.path.join(root, i), objs,))
+# # print(objs)
+#
+# obj_sort = sorted(objs, key=os.path.isfile, reverse=True)
+# print(obj_sort)
+
+#
+# print(os.path.isfile("C:\\Python317\\317\\Work\\w.txt"))
+# print(os.path.isdir("C:\\Python317\\317\\Work\\"))
+
+
+# print(os.path.exists("C:\\Python317\\317\\Work"))  # Проверка на существование пути
+# print(os.path.getsize('main.py'))  # Возвращает размер документа/папки
+
+
+# b = os.path.getsize('main.py')
+# print(b, "байт")
+# print(b // 1024, "килобайт")
+
+
+# path = "main.py"
+# print(os.path.getctime(path))  # возвращает время создания файла(в секундах)
+# print(os.path.getctime(path))  # возвращает время последнего доступа к файлу(в секундах)
+# print(os.path.getmtime(path))  # возвращает время последнего изменения файла(в секундах)
+#
+# print(time.strftime("%d.%m.%Y, %H:%M%:%S", time.localtime(os.path.getctime(path))))
+# print(time.strftime("%d.%m.%Y, %H:%M%:%S", time.localtime(os.path.getctime(path))))
+# print(time.strftime("%d.%m.%Y, %H:%M%:%S", time.localtime(os.path.getctime(path))))
+
+
+# class Point:  # class Name
+#     """Класс для предоставления координат на плоскости"""
+#     x = 1  # свойства(поля, переменные), свойства + методы = атрибуты
+#     y = 1  # методы(функции), свойства + методы = атрибуты
+#
+#
+# p1 = Point()
+# print(p1.x)
+# print(type(p1))
+# # a = 5
+# # print(type(a))
+# print(Point.__doc__)
+# print(Point.__name__)
+# print(dir(Point))
+
+
+# class Point:  # class Name
+#     """Класс для предоставления координат на плоскости"""
+#     x = 1  # свойства(поля, переменные), свойства + методы = атрибуты
+#     y = 1  # методы(функции), свойства + методы = атрибуты
+#
+#
+# p1 = Point()  # Экземпляр класса
+# p1.x = 10
+# p1.y = 20
+# p1.z = 30
+# print(p1.x, p1.y, p1.z)
+# print(p1.__dict__)
+#
+# p2 = Point()
+# p2.x = 100
+# print(p2.x, p2.y)
+# print(p2.__dict__)
+
+# print(id(Point))
+# print(id(p1))
+# print(id(p2))
+
+#
+# class Point:
+#     x = 1
+#     y = 1
+#
+#     def set_coord(self, a, b):
+#         self.x = a
+#         self.y = b
+#         print(self.__dict__)
+#
+#
+# p1 = Point()
+# # p1.x = 5
+# # p1.y = 10
+# p1.set_coord(5, 10)
+# # Point.set_coord(p1)
+#
+# p2 = Point()
+# # p2.x = 50
+# # p2.y = 100
+# p2.set_coord(50, 100)
+# # Point.set_coord(p2)
+
+
+# class Human:
+#     name = "name"
+#     birthday = "00.00.0000"
+#     phone = "00-00-00"
+#     country = "country"
+#     city = "city"
+#     address = "street, house"
+#
+#     def print_info(self):
+#         print(" Персональные данные ".center(40, "*"))
+#         print(f"Имя: {self.name}\nДата рождения: {self.birthday}\nНомер телефона: {self.phone}\nСтрана:"
+#               f"{self.country}\nГород: {self.city}\nГород: {self.address}")
+#         print("*" * 40)
+#
+#     def input_info(self, first_name, birthday, phone, country, city, address):
+#         self.name = first_name
+#         self.birthday = birthday
+#         self.phone = phone
+#         self.country = country
+#         self.city = city
+#         self.address = address
+#
+#     def set_name(self, name):
+#         self.name = name
+#
+#     def get_name(self):
+#         return self.name
+#
+#     def set_birthday(self, birthday):
+#         self.birthday = birthday
+#
+#     def get_birthday(self):
+#         return self.birthday
+#
+#
+# h1 = Human()
+# h1.print_info()
+# h1.input_info("Юля", "23.05.1986", "45-46-98", "Россия", "Москва", "Чистопрудный бульвар, 1A",)
+# h1.print_info()
+# h1.set_name("Юлия")
+# print(h1.get_name())
+# h1.set_birthday("23.12.1190")
+# print(h1.get_birthday())
+# h1.print_info()
+
+
+class Person:
+    skill = 10
+    count = 0
+
+    # name = ""
+    # surname = ""
+
+    def __init__(self, name, surname):  # Инициализатор
+        self.name = name
+        self.surname = surname
+        print("Инициализатор")
+        Person.count += 1
+
+    def __del__(self):  # Финализатор(деструктор)
+        print("Удаление экземпляра:", self.__class__.__name__)
+
+    def print_inf0(self):
+        print("Данные сотрудника:", self.name, self.surname)
+
+    def add_skill(self, k):
+        self.skill += k
+        print("Квалификация сотрудникаЖ:", self.skill, end="\n\n")
+
+
+p1 = Person("Виктор", "Резник")
+p1.print_inf0()
+p1.add_skill(3)
+# del p1
+# p1 = 5
+print(p1.count)
+
+p2 = Person("Анна", "Долгих")
+p2.print_inf0()
+p2.add_skill(2)
+print(p2.count)
+
+p2 = Person("Вася", "Пупкин000")
+p2.print_inf0()
+p2.add_skill(2)
+print(p2.count)
+print(Person.count)
