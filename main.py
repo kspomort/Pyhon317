@@ -3586,7 +3586,6 @@ import re
 import os
 import time
 
-
 # import os.path
 
 # print(os.getcwd())  # возвращает текущую директорию
@@ -4507,43 +4506,184 @@ import time
 #
 #
 
-class Point:
-    def __init__(self, x, y):
-        self.__x = x
-        self.__y = y
+# class Point:
+#     def __init__(self, x, y):
+#         self.__x = x
+#         self.__y = y
+#
+#     def __str__(self):
+#         return f"({self.__x}, {self.__y})"
+#
+#
+# class Prop:
+#     def __init__(self, sp: Point, ep: Point, color: str = "red", width: int = 1):
+#         self._sp = sp
+#         self._ep = ep
+#         self._color = color
+#         self._width = width
+#
+#
+# class Line(Prop):
+#     def draw_line(self):
+#         print(f"Рисование линии: {self._sp}, {self._ep}, {self._color}, {self._width}")
+#
+#     def set_coord(self, sp: Point = None, ep: Point = None):
+#         if ep is None:
+#             self._sp = sp
+#         elif sp is None:
+#             self._ep = ep
+#         else:
+#             self._sp = sp
+#             self._ep = ep
+#
+#
+# line = Line(Point(1, 2), Point(10, 20))
+# line.draw_line()
+# line.set_coord(Point(12, 18), Point(100, 200))
+# line.draw_line()
+# line.set_coord(Point(-10, -20))
+# line.draw_line()
+#
+# line.set_coord(ep=Point(500, 700))
+# line.draw_line()
 
-    def __str__(self):
-        return f"({self.__x}, {self.__y})"
+#
+# class Point:
+#     def __init__(self, x, y):
+#         self.__x = x
+#         self.__y = y
+#
+#     def __str__(self):
+#         return f"({self.__x}, {self.__y})"
+#
+#
+# class Prop:
+#     def __init__(self, sp: Point, ep: Point, color: str = "red", width: int = 1):
+#         self._sp = sp
+#         self._ep = ep
+#         self._color = color
+#         self._width = width
+#
+#     def draw(self):
+#         raise NotImplementedError("В дочернем классе должен быть реализован метод draw")
+#
+#
+# class Line(Prop):
+#     def draw(self):
+#         print(f"Рисование линии: {self._sp}, {self._ep}, {self._color}, {self._width}")
+#
+#
+# class Rect(Prop):
+#     def draw(self):
+#         print(f"Рисование прямоугольника: {self._sp}, {self._ep}, {self._color}, {self._width}")
+#
+#
+# class Ellipse(Prop):
+#     # def draw(self):
+#     #     print(f"Рисование эллипса: {self._sp}, {self._ep}, {self._color}, {self._width}")
+#     ...
+#
+#
+# figs = list()
+# figs.append(Line(Point(0, 0), Point(10, 10)))
+# figs.append(Line(Point(10, 10), Point(20, 10)))
+# figs.append(Rect(Point(50, 50), Point(100, 100)))
+# figs.append(Ellipse(Point(-10, -10), Point(30, 30)))
+#
+#
+# for f in figs:
+#     f.draw()
 
 
-class Prop:
-    def __init__(self, sp: Point, ep: Point, color: str = "red", width: int = 1):
-        self._sp = sp
-        self._ep = ep
-        self._color = color
-        self._width = width
+# from abc import ABC, abstractmethod
+#
+#
+# class Chess(ABC):  # абстрактный класс
+#     def draw(self):
+#         print("Нарисовал шахматную фигуру")
+#
+#     @abstractmethod
+#     def move(self):  # абстрактный метод
+#        print("Метод move() в базовом классе")
+#
+#
+# class Queen(Chess):
+#     def move(self):
+#         super().move()
+#         print("Ферзь перемещен на е2е4")
+#
+#
+# q = Queen()
+# q.draw()
+# q.move()
 
 
-class Line(Prop):
-    def draw_line(self):
-        print(f"Рисование линии: {self._sp}, {self._ep}, {self._color}, {self._width}")
+# from math import pi
+#
+#
+# class Table:
+#     def __init__(self, width=None, length=None, radius=None):
+#         if radius is None:
+#             if length is None:
+#                 self._width = self._length = width
+#             else:
+#                 self._width = width
+#                 self._length = length
+#         else:
+#             self._radius = radius
+#
+#     def calc_area(self):
+#         raise NotImplementedError("В дочернем классе должен быть определен метод calc_area()")
+#
+#
+# class SqTable(Table):
+#     def calc_area(self):
+#         return self._width * self._length
+#
+#
+# class RoundTable(Table):
+#     def calc_area(self):
+#         return round(pi * self._radius ** 2, 2)
+#
+#
+# t = SqTable(20, 10)
+# print(t.__dict__)
+# print(t.calc_area())
+#
+# t1 = SqTable(20)
+# print(t1.__dict__)
+# print(t1.calc_area())
+#
+# t2 = RoundTable(radius=20)
+# print(t2.__dict__)
+# print(t2.calc_area())
 
-    def set_coord(self, sp: Point = None, ep: Point = None):
-        if ep is None:
-            self._sp = sp
-        elif sp is None:
-            self._ep = ep
-        else:
-            self._sp = sp
-            self._ep = ep
+
+from abc import ABC, abstractmethod
 
 
-line = Line(Point(1, 2), Point(10, 20))
-line.draw_line()
-line.set_coord(Point(12, 18), Point(100, 200))
-line.draw_line()
-line.set_coord(Point(-10, -20))
-line.draw_line()
+class Currency(ABC):
+    def __init__(self, value):
+        self.value = value
 
-line.set_coord(ep=Point(500, 700))
-line.draw_line()
+    @abstractmethod
+    def convert_to_rub(self):
+        pass
+
+    def print_value(self):
+        print(self.value, end=" ")
+
+
+class Dollar(Currency):
+    rate_to_ru = 74.16
+    suffix = "USD"
+
+    def convert_to_rub(self):
+        return self.value * Dollar.rate_to_ru
+
+
+d = [Dollar(5), Dollar(10), Dollar(50), Dollar(100)]
+print("*" * 50)
+for elem in d:
+    elem.print_value()
+    print(f"USD = {elem.convert_to_rub():.2f} RUB")
